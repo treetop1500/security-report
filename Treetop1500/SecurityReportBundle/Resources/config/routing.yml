@@ -1,0 +1,4 @@
+treetop1500_security_report_homepage:
+    path:     /services/security-checker/{key}
+    defaults: { _controller: Treetop1500SecurityReportBundle:Default:index }
+    requirements: { key: '[A-Za-z0-9-]+' }

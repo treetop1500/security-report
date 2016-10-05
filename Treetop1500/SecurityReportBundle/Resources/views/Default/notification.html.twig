@@ -1,0 +1,8 @@
+{% block body %}
+    <!-- Email Content -->
+    <h1>Unauthorized Security Report on {{ host }}</h1>
+    <p>At the time of this email an attempt was made to access the security:check for {{ host }},
+        by an unauthorized remote application with the address <strong>{{ remote_address }}</strong>.
+    </p>
+{% endblock %}
+
