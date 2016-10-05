@@ -17,7 +17,8 @@ class DefaultController extends Controller
       $allowableIps,
       $deliveryMethod,
       $showOutput,
-      $recipients,
+      $email_recipients,
+      $email_from,
       $host;
 
     public function indexAction(Request $request, $key)
@@ -28,7 +29,8 @@ class DefaultController extends Controller
         $this->allowableIps = $config['allowable_ips'];
         $this->showOutput = $config['show_output'];
         $this->deliveryMethod = $config['delivery_method'];
-        $this->recipients = $config['recipients'];
+        $this->email_recipients = $config['email_recipients'];
+        $this->email_from = $config['email_from'];
 
         $this->host = $request->getHost();
         $lockfile = $this->get('kernel')->getRootDir()."/../composer.lock";
@@ -37,7 +39,8 @@ class DefaultController extends Controller
         if ($key != $this->access_key || !in_array($remote_address,$this->allowableIps)) {
             $message = \Swift_Message::newInstance()
               ->setSubject('Unauthorized Security Check')
-              ->setTo($this->recipients)
+              ->setTo($this->email_recipients)
+              ->setFrom($this->email_from)
               ->setBody(
                 $this->renderView(
                   'Treetop1500SecurityReportBundle:Default:notification.html.twig',
@@ -70,7 +73,8 @@ class DefaultController extends Controller
         if ($this->deliveryMethod == "email") {
             $message = \Swift_Message::newInstance()
               ->setSubject('New Security Check Report')
-              ->setTo($this->recipients)
+              ->setFrom($this->email_from)
+              ->setTo($this->email_recipients)
               ->setBody(
                 $this->renderView(
                   'Treetop1500SecurityReportBundle:Default:report.html.twig',

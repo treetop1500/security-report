@@ -36,7 +36,8 @@ treetop1500_security_report:
     allowable_ips: [127.0.0.1]
     show_output: true
     delivery_method: email
-    recipients: ['me@mydomain.com']
+    email_recipients: ['me@mydomain.com']
+    email_from: 'me@mydomain.com'
 
 ```
 
@@ -48,7 +49,10 @@ treetop1500_security_report:
 
 `delivery_method` currently the only option is 'email'
 
-`recipients` is an array of email addresses to receive the report
+`email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo`` method.
+
+`email_from` is a single email to be used in the SwiftMailer `setFrom`` method
+
 
 ##Routing##
 
