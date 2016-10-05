@@ -2,7 +2,7 @@
 A Symfony 3 bundle for automating reports with the Symfony security checker components
 
 ##Installation##
-Add the following to your composer.json file, then run `composer update`
+Add the following to your composer.json file.
     
 ```
 "require": {
@@ -24,6 +24,8 @@ public function registerBundles()
         ...
     }
 ```
+
+Then run `composer update`
 
 ##Configuration##
 
