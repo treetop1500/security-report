@@ -10,8 +10,8 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/services/security-check/e6d303ce6a0fe8e656859e3f981c5d1');
 
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+        $this->assertContains('Security Check Report', $client->getResponse()->getContent());
     }
 }
