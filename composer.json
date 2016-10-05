@@ -10,8 +10,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Treetop1500\\SecurityReportBundle": ""
+        "psr-4": {
+            "Treetop1500\\SecurityReportBundle\\": ""
         }
     },
     "require": {
