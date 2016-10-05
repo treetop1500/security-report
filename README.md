@@ -70,3 +70,5 @@ To run the security report, simply access the url from any configured allowable 
 
 ###Crons###
 It is recommended to set up a cron to run this checker periodically to alert you of new vulnerabilities. Make sure to add the IP addresses of the remote that the cron will be using.
+
+If you use EasyCron, the IP addresses you need can be found here: https://www.easycron.com/ips
