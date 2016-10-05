@@ -10,7 +10,21 @@ Add the following to your composer.json file, then run `composer update`
     "treetop1500/security-report": "dev-master"
 },
 ```
-    
+
+Add the following to your AppKernel.php
+
+```
+public function registerBundles()
+    {
+        $bundles = [
+            ...
+            new \Treetop1500\SecurityReportBundle\Treetop1500SecurityReportBundle()
+        ];
+
+        ...
+    }
+```
+
 ##Configuration##
 
 Add the following to your config:
