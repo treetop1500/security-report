@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit colors="true">
+<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit bootstrap="../../../vendor/autoload.php" colors="true"
+         convertErrorsToExceptions="false"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="false">
+    <php>
+        <server name="KERNEL_DIR" value="../../../app" />
+    </php>
     <testsuites>
         <testsuite name="Treetop1500 Security Check Test Suite">
             <directory>./Tests</directory>

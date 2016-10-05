@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
         $this->host = $request->getHost();
         $lockfile = $this->get('kernel')->getRootDir()."/../composer.lock";
-        $remote_address = $_SERVER['REMOTE_ADDR'];
+        $remote_address = $this->get('request_stack')->getCurrentRequest()->getClientIp();
 
         if ($key != $this->access_key || !in_array($remote_address,$this->allowableIps)) {
             $message = \Swift_Message::newInstance()
