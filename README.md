@@ -46,6 +46,10 @@ treetop1500_security_report:
 
 `show_output` should be set to false in production environments. Set to true when accessing the page manaually for debugging.
 
+`delivery_method` currently the only option is 'email'
+
+`recipients` is an array of email addresses to receive the report
+
 ##Routing##
 
 Import the routing:
