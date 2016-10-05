@@ -1,4 +1,4 @@
-services:
+#services:
 #    treetop1500_security_report.example:
-#        class: Treetop1500\SecurityReportBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+#        class: Treetop1500\SecurityReportBundle\Ext
+#       arguments: ["@service_id", "plain_value", %parameter%]

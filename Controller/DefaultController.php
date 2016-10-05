@@ -13,19 +13,23 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    private $access_key, $allowableIps, $deliveryMethod, $showOutput, $recipients, $host;
-
-
-    public function __construct() {
-        $this->access_key = $this->getParameter('treetop1500_security_report.key');
-        $this->allowableIps = $this->getParameter('treetop1500_security_report.allowable_ips');
-        $this->showOutput = $this->getParameter('treetop1500_security_report.show_output');
-        $this->deliveryMethod = $this->getParameter('treetop1500_security_report.delivery_method');
-        $this->recipients = $this->getParameter('treetop1500_security_report.recipients');
-    }
+    private $access_key,
+      $allowableIps,
+      $deliveryMethod,
+      $showOutput,
+      $recipients,
+      $host;
 
     public function indexAction(Request $request, $key)
     {
+        $config = $this->getParameter('treetop1500_security_report.config');
+
+        $this->access_key = $config['key'];
+        $this->allowableIps = $config['allowable_ips'];
+        $this->showOutput = $config['show_output'];
+        $this->deliveryMethod = $config['delivery_method'];
+        $this->recipients = $config['recipients'];
+
         $this->host = $request->getHost();
         $lockfile = $this->get('kernel')->getRootDir()."/../composer.lock";
         $remote_address = $_SERVER['REMOTE_ADDR'];
@@ -62,7 +66,6 @@ class DefaultController extends Controller
 
         // return the output, don't use if you used NullOutput()
         $content = nl2br($output->fetch());
-
 
         if ($this->deliveryMethod == "email") {
             $message = \Swift_Message::newInstance()
