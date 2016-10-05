@@ -1,0 +1,19 @@
+{
+    "name": "treetop1500/security-report",
+    "license": "MIT",
+    "description": "A security report automator utilizing the sensio labs security check component.",
+    "authors": [
+        {
+            "name": "Robert Wade",
+            "email": "rwade@grayloon.com"
+        }
+    ],
+    "require": {
+        "sensiolabs/security-checker": "~3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
