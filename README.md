@@ -31,13 +31,12 @@ Add the following to your config:
 
 ```
 #app/config.yml
-parameters:
-    treetop1500_security_report
-        key: XXXXXXXXXXXXXXXXXXXXXX
-        allowable_ips: [127.0.0.1]
-        show_output: true
-        delivery_method: email
-        recipients: ['me@mydomain.com']
+treetop1500_security_report:
+    key: XXXXXXXXXXXXXXXXXXXXXX
+    allowable_ips: [127.0.0.1]
+    show_output: true
+    delivery_method: email
+    recipients: ['me@mydomain.com']
 
 ```
 
