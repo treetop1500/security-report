@@ -31,13 +31,12 @@ Add the following to your config:
 
 ```
 #app/config.yml
-parameters:
-    treetop1500_security_report
-        key: XXXXXXXXXXXXXXXXXXXXXX
-        allowable_ips: [127.0.0.1]
-        show_output: true
-        delivery_method: email
-        recipients: ['me@mydomain.com']
+treetop1500_security_report:
+    key: XXXXXXXXXXXXXXXXXXXXXX
+    allowable_ips: [127.0.0.1]
+    show_output: true
+    delivery_method: email
+    recipients: ['me@mydomain.com']
 
 ```
 
@@ -46,6 +45,10 @@ parameters:
 `allowable_ips` is an array of IP addresses that can access this service.
 
 `show_output` should be set to false in production environments. Set to true when accessing the page manaually for debugging.
+
+`delivery_method` currently the only option is 'email'
+
+`recipients` is an array of email addresses to receive the report
 
 ##Routing##
 
