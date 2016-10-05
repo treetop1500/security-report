@@ -2,7 +2,7 @@
 A Symfony 3 bundle for automating reports with the Symfony security checker components
 
 ##Installation##
-Add the following to your composer.json file, then run `composer update`
+Add the following to your composer.json file.
     
 ```
 "require": {
@@ -24,6 +24,8 @@ public function registerBundles()
         ...
     }
 ```
+
+Then run `composer update`
 
 ##Configuration##
 
@@ -72,3 +74,5 @@ To run the security report, simply access the url from any configured allowable 
 
 ###Crons###
 It is recommended to set up a cron to run this checker periodically to alert you of new vulnerabilities. Make sure to add the IP addresses of the remote that the cron will be using.
+
+If you use EasyCron, the IP addresses you need can be found here: https://www.easycron.com/ips
