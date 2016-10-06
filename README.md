@@ -1,7 +1,7 @@
 # security-report
 A Symfony 3 bundle for automating reports with the Symfony security checker components.
 
-*Please note: This bundle is not ready for public use yet, and is not in the Packagist repository, so the composer installation below will not work yet.*
+@Please note: *This bundle is not ready for public use yet, and is not in the Packagist repository, so the composer installation below will not work yet.*
 
 ##Installation##
 Add the following to your composer.json file.
@@ -53,9 +53,9 @@ treetop1500_security_report:
 
 `delivery_method` currently the only option is 'email'
 
-`email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo`` method.
+`email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo` method.
 
-`email_from` is a single email to be used in the SwiftMailer `setFrom`` method
+`email_from` is a single email to be used in the SwiftMailer `setFrom` method
 
 
 ##Routing##
