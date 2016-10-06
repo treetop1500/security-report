@@ -53,9 +53,9 @@ treetop1500_security_report:
 
 `delivery_method` currently the only option is 'email'
 
-`email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo`` method.
+`email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo` method.
 
-`email_from` is a single email to be used in the SwiftMailer `setFrom`` method
+`email_from` is a single email to be used in the SwiftMailer `setFrom` method
 
 
 ##Routing##
