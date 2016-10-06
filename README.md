@@ -83,5 +83,5 @@ If you use EasyCron, the IP addresses you need can be found here: https://www.ea
 1. Complete phpUnit testing suite
 2. Improve Email subject based on results
 3. Explore priority email headers
-
+4. Add a configuration setting to allow only emails to be sent on tests that reveal vulnerabilities ("OK" results are not emailed).
 
