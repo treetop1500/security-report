@@ -1,7 +1,7 @@
 # security-report
 A Symfony 3 bundle for automating reports with the Symfony security checker components.
 
-@Please note: *This bundle is not ready for public use yet, and is not in the Packagist repository, so the composer installation below will not work yet.*
+*Please note: This bundle is not ready for public use yet, and is not in the Packagist repository, so the composer installation below will not work yet.*
 
 ##Installation##
 Add the following to your composer.json file.
