@@ -88,7 +88,11 @@ class DefaultController extends Controller
             $this->get('mailer')->send($message);
         }
 
-        // return new Response(""), if you used NullOutput()
-        return new Response($content);
+        if ($config['show_output']) {
+            return new Response($content);
+        }
+
+        return new Response("Security Check Report");
+
     }
 }
