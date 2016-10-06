@@ -7,7 +7,7 @@ Add the following to your composer.json file.
 ```
 "require": {
     ...
-    "treetop1500/security-report": "dev-master"
+    "treetop1500/security-report": "~1.0"
 },
 ```
 
