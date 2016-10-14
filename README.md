@@ -42,6 +42,7 @@ treetop1500_security_report:
     delivery_method: email
     email_recipients: ['me@mydomain.com']
     email_from: 'me@mydomain.com'
+    advisories_only: false
 
 ```
 
@@ -56,6 +57,8 @@ treetop1500_security_report:
 `email_recipients` is an array of email addresses to receive the report. Set in the SwiftMailer `setTo` method.
 
 `email_from` is a single email to be used in the SwiftMailer `setFrom` method
+
+`advisories_only` should be set to true if you want only reports containing advisories. Set to false to be notified of all reports. Default is false.
 
 
 ##Routing##
