@@ -50,6 +50,9 @@ class Configuration implements ConfigurationInterface
                     ->prototype("scalar")
                     ->end()
                 ->end()
+                ->booleanNode('advisories_only')
+                  ->defaultTrue()
+                ->end()
             ->end()
         ;
 
