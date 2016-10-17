@@ -5,7 +5,7 @@ A Symfony 3 bundle for automating reports with the Symfony security checker comp
 
 ##Installation##
 Add the following to your composer.json file.
-    
+
 ```
 "require": {
     ...
@@ -48,7 +48,7 @@ treetop1500_security_report:
 
 `key` can be any alpha-numeric string that you will pass to this service as a url parameter.
 
-`allowable_ips` is an array of IP addresses that can access this service.
+`allowable_ips` is an array of IP addresses that can access this service. Can be given as a single IP or in CIDR notation (x.x.x.x/xx)
 
 `show_output` should be set to false in production environments. Set to true when accessing the page manaually for debugging.
 
@@ -87,4 +87,3 @@ If you use EasyCron, the IP addresses you need can be found here: https://www.ea
 2. Improve Email subject based on results
 3. Explore priority email headers
 4. Add a configuration setting to allow only emails to be sent on tests that reveal vulnerabilities ("OK" results are not emailed).
-

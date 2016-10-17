@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\HttpFoundation\Request;
 use AppKernel;
+use Symfony\Component\HttpFoundation\IpUtils;
 
 /**
  * Class DefaultController
@@ -106,7 +107,8 @@ class DefaultController extends Controller
         $this->lockfile = $this->get('kernel')->getRootDir()."/../composer.lock";
         $this->isCloudFlare = ($request->query->get('server') == "cloudflare-nginx" ? true : false);
 
-        if ($key != $this->access_key || (!in_array($this->remote_address,$this->allowableIps) || !$this->isCloudFlare)) {
+        // Verify Access Key and IP Address
+        if ($key != $this->access_key || !IpUtils::checkIp($this->remote_address, $this->allowableIps)) {
           $this->sendSecurityReport(NULL, TRUE);
           throw new UnauthorizedHttpException("You are not authorized to access this.");
         }
