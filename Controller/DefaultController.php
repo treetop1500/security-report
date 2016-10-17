@@ -78,6 +78,13 @@ class DefaultController extends Controller
      */
     private $lockfile;
 
+
+    /**
+     * @var boolean
+     * Is this a request from CloudFlare?
+     */
+    private $isCloudFlare;
+
     /**
      * @param Request $request
      * @param $key
@@ -97,8 +104,9 @@ class DefaultController extends Controller
         $this->advisories_only = $config['advisories_only'];
         $this->remote_address = $this->get('request_stack')->getCurrentRequest()->getClientIp();
         $this->lockfile = $this->get('kernel')->getRootDir()."/../composer.lock";
+        $this->isCloudFlare = ($request->query->get('server') == "cloudflare-nginx" ? true : false);
 
-        if ($key != $this->access_key || !in_array($this->remote_address,$this->allowableIps)) {
+        if ($key != $this->access_key || (!in_array($this->remote_address,$this->allowableIps) || !$this->isCloudFlare)) {
           $this->sendSecurityReport(NULL, TRUE);
           throw new UnauthorizedHttpException("You are not authorized to access this.");
         }
