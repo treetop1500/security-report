@@ -126,7 +126,8 @@ class SecurityCheckCommand extends ContainerAwareCommand
             'Treetop1500SecurityReportBundle:Default:report.html.twig',
             array(
               'report' => $content,
-              'host' => $host
+              'host' => $host,
+              'remote_address' => "Application Server"
             )
           ),
           'text/html'
