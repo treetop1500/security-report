@@ -127,7 +127,8 @@ class SecurityCheckCommand extends ContainerAwareCommand
             array(
               'report' => $content,
               'host' => $host,
-              'remote_address' => "Application Server"
+				  'remote_address' => "Application Server",
+				  "command" => true
             )
           ),
           'text/html'
