@@ -3,7 +3,7 @@ A Symfony 3 bundle for automating reports with the Symfony security checker comp
 
 *Please note: This bundle is not ready for public use yet, and is not in the Packagist repository, so the composer installation below will not work yet.*
 
-##Installation
+## Installation
 Add the following to your composer.json file.
 
 ```
@@ -29,7 +29,7 @@ public function registerBundles()
 
 Then run `composer update`
 
-##Configuration##
+## Configuration
 
 Add the following to your config:
 
@@ -61,7 +61,7 @@ treetop1500_security_report:
 `advisories_only` should be set to true if you want only reports containing advisories. Set to false to be notified of all reports. Default is false.
 
 
-##Routing##
+## Routing
 
 Import the routing:
 
@@ -73,7 +73,7 @@ treetop1500_security_report:
 
 This is ony required if you're not using the symfony command.
 
-##Usage##
+## Usage
 
 To run the security report, simply access the url from any configured allowable IP (replace 'XXXXX' with your configured key):
 
@@ -83,12 +83,12 @@ To run the report command use:
 
     bin/console treetop:report
     
-###Crons###
+### Crons
 It is recommended to set up a cron to run this checker periodically to alert you of new vulnerabilities. Make sure to add the IP addresses of the remote that the cron will be using.
 
 If you use EasyCron, the IP addresses you need can be found here: https://www.easycron.com/ips
 
-###To Do###
+### To Do
 1. Complete phpUnit testing suite
 2. Improve Email subject based on results
 3. Explore priority email headers
